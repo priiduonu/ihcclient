@@ -1,0 +1,17 @@
+# yaml configuration file for ihcclient
+
+# IHCServer settings
+ihc:
+  server: 192.168.1.111
+  port: 8081
+  username:
+  password:
+
+# HASS server settings
+hass:
+  server: 192.168.1.111
+  port: 8123
+  token: '<<my_hass_token>>'
+
+# logfile name:
+log_file: /var/log/ihc.log

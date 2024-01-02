@@ -1,0 +1,12 @@
+[Unit]
+Description=IHC client daemon
+
+[Service]
+Type=simple
+ExecStart=/opt/ihcclient/ihcclient.py
+WorkingDirectory=/opt/ihcclient/
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=sysinit.target

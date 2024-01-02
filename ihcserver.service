@@ -1,0 +1,12 @@
+[Unit]
+Description=IHC server daemon
+
+[Service]
+Type=simple
+ExecStart=/opt/ihcserver/ihcserver -d
+StandardOutput=null
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=sysinit.target
