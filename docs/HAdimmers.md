@@ -202,5 +202,5 @@ The scripts take the output entity name as an argument.
 > Remember to include the scripts in you main `configuration.yaml` file:
 
 ```yaml
-!include scripts.yaml
+script: !include scripts.yaml
 ```

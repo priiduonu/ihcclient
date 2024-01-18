@@ -1,6 +1,6 @@
 # Notes about IHC dimmers
 
-Several dimmer models/modifications exist for the old IHC system.
+Several dimmer models/modifications exist for the "older" IHC system.
 
 | model   | p/n        |
 |---------|------------|
@@ -52,7 +52,7 @@ Table: 400 UNI configurations
 > Jumpers `B` and `C` can not be both closed!
 
 The dimmer can be controlled with 10..30V AC/DC and/or 230VAC control voltage.
-As 230VAC control voltage does not enable using all the functions, IHC Output
+As with 230VAC control voltage we can not use all the functions, IHC Output
 24 module is probably the most common choice here.
 
 | terminal | function in 1-button mode                       | 2-button mode            |
@@ -67,7 +67,7 @@ As 230VAC control voltage does not enable using all the functions, IHC Output
 Table: 400 UNI terminals
 
 > [!NOTE]
-> Pulse must be < 0.4s!
+> Pulse length must be < 0.4s!
 
 > [!NOTE]
 > Terminals 0..4 are for 24VDC from IHC, terminal 5 is for 230VAC.
