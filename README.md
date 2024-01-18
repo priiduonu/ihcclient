@@ -40,7 +40,12 @@ IHCClient performs the following functions:
 
 Follow these step-by-step guides:
 
-- ![How to install and connect the USB to RS485 dongle](docs/USBtoRS485.md)
-- ![How to install and configure the IHCServer](docs/IHCServer.md)
-- ![How to install and configure the IHCClient](docs/IHCClient.md)
-- ![How to configure the entities in Home Assistant](docs/HACONFIG.md)
+- [How to install and connect the USB to RS485 dongle](docs/USBtoRS485.md)
+- [How to install and configure the IHCServer](docs/IHCServer.md)
+- [How to install and configure the IHCClient](docs/IHCClient.md)
+- [How to configure the entities in Home Assistant](docs/HACONFIG.md)
+
+Bonus tracks:
+
+- [Notes about IHC dimmers](docs/IHCdimmers.md)
+- [How to control the dimmers with Home Assistant](docs/HAdimmers.md)
