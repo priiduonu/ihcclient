@@ -11,7 +11,7 @@
 # - customize.yaml
 #
 # outputs:
-# - switches.yaml
+# - command_lines.yaml
 # - customize.yaml
 
 #######################################
