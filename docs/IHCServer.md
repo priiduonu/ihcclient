@@ -28,6 +28,12 @@ cd utils
 git revert 4275df8ab99ec077d238d7e4ee40f399126483e5
 ```
 
+> [!NOTE]
+> Make sure you have the `libssl-dev` library installed:
+> ```bash
+> apt-get install libssl-dev
+> ```
+
 When you have cloned both repos and optionally reverted the commit I referred
 to, proceed to compile the code:
 
