@@ -124,39 +124,37 @@ To be able to switch the IHC Controller outputs, you must define the output
 entities as [Command Line](https://www.home-assistant.io/integrations/command_line)
 switches in the following Home Assistant configuration files:
 
-- `switches.yaml`
+- `command_lines.yaml`
 - `customize.yaml` (optional)
 
 The command line switch uses a simple `curl` POST request to connect to the
 IHCServer web interface and set the selected controller output to a desired
 state.
 
-A sample `switches.yaml`:
+A sample `command_lines.yaml`:
 
 ```yaml
 # IHC outputs:
 
-- platform: command_line
-  switches:
-    garden:
-      friendly_name: Garden lights
-      command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":4,"ioNumber":3,"state":true}'
-      command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":4,"ioNumber":3,"state":false}'
+- switch:
+    name: garden
+    command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":4,"ioNumber":3,"state":true}'
+    command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":4,"ioNumber":3,"state":false}'
 
-    p6:
-      friendly_name: Power outlet (P6)
-      command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":5,"ioNumber":6,"state":true}'
-      command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":5,"ioNumber":6,"state":false}'
+- switch:
+    name: p6
+    command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":5,"ioNumber":6,"state":true}'
+    command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":5,"ioNumber":6,"state":false}'
 
-    bathroom_fan:
-      friendly_name: Bathroom fan
-      command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":8,"ioNumber":1,"state":true}'
-      command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":8,"ioNumber":1,"state":false}'
+- switch:
+    name: bathroom_fan
+    command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":8,"ioNumber":1,"state":true}'
+    command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":8,"ioNumber":1,"state":false}'
 
-    ihc_15_2:
-      friendly_name: Nuclear reactor mains
-      command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":15,"ioNumber":2,"state":true}'
-      command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":15,"ioNumber":2,"state":false}'
+- switch:
+    name: ihc_15_2
+    command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":15,"ioNumber":2,"state":true}'
+    command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":15,"ioNumber":2,"state":false}'
 ```
 
 > [!WARNING]
@@ -168,20 +166,33 @@ A sample `customize.yaml`:
 # IHC outputs:
 
 switch.garden:
+  friendly_name: Garden lights
   assumed_state: false
   icon: mdi:outdoor-lamp
 
 switch.p6:
+  friendly_name: Power outlet (P6)
   assumed_state: false
   icon: mdi:power-socket-eu
 
 switch.bathroom_fan:
+  friendly_name: Bathroom fan
   assumed_state: false
   icon: mdi:fan
 
 switch.ihc_15_2:
+  friendly_name: Nuclear reactor mains
   assumed_state: false
   icon: mdi:atom
+```
+
+> [!NOTE]
+> Remember to include the files in you main `configuration.yaml` file:
+
+```yaml
+input_boolean: !include input_booleans.yaml
+binary_sensor: !include binary_sensors.yaml
+command_line: !include command_lines.yaml
 ```
 
 ## Initial states
