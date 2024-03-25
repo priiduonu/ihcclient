@@ -42,6 +42,13 @@ cd /opt/ihcserver
 make
 ```
 
+> [!NOTE]
+> The source is quite old - to compile the code with modern compilers you may
+  have to add the following option to `Makefile` and `utils/Makefile`:
+> ```
+> CXXFLAGS=-std=c++14
+> ```
+
 If the compilation is successful, there should now be the IHCServer
 application `/opt/ihcserver/ihcserver`.
 
