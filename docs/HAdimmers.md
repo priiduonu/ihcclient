@@ -5,28 +5,32 @@ dimmer.
 
 IHC outputs 1..4 are connected to dimmer terminals 1..4.
 
-In the `switches.yaml` you define the following IHC outputs:
+In the `command_lines.yaml` you define the following IHC outputs:
 
 ```yaml
-    dim1_1:
-      friendly_name: Livingroom ceiling dimmer DIM1.1
-      command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":1,"state":true}'
-      command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":1,"state":false}'
+- switch:
+    name: dim1_1
+    # friendly_name: Livingroom ceiling dimmer DIM1.1
+    command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":1,"state":true}'
+    command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":1,"state":false}'
 
-    dim1_2:
-      friendly_name: Livingroom ceiling dimmer DIM1.2
-      command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":2,"state":true}'
-      command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":2,"state":false}'
+- switch:
+    name: dim1_2
+    # friendly_name: Livingroom ceiling dimmer DIM1.2
+    command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":2,"state":true}'
+    command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":2,"state":false}'
 
-    dim1_3:
-      friendly_name: Livingroom ceiling dimmer DIM1.3
-      command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":3,"state":true}'
-      command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":3,"state":false}'
+- switch:
+    name: dim1_3
+    # friendly_name: Livingroom ceiling dimmer DIM1.3
+    command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":3,"state":true}'
+    command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":3,"state":false}'
 
-    dim1_4:
-      friendly_name: Livingroom ceiling dimmer DIM1.4
-      command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":4,"state":true}'
-      command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":4,"state":false}'
+- switch:
+    name: dim1_4
+    # friendly_name: Livingroom ceiling dimmer DIM1.4
+    command_on:  curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":4,"state":true}'
+    command_off: curl --silent 'http://192.168.1.111:8081/ihcrequest' --data-binary '{"type":"setOutput","moduleNumber":14,"ioNumber":4,"state":false}'
 ```
 
 Now define the controls in your UI. You can use the
