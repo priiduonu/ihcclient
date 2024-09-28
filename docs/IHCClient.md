@@ -12,6 +12,7 @@ Make sure you have the following PIP packages installed:
 
 - PyYAML
 - requests
+- setproctitle
 - urllib3
 - websocket-client
 

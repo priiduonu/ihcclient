@@ -10,6 +10,9 @@ import requests
 import websocket
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
+from setproctitle import setproctitle
+
+setproctitle('ihcclient')
 
 
 def readYamlConfig(configfile):
